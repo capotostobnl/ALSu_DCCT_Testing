@@ -21,7 +21,8 @@ from functional_tests.current_test import current_test
 from instrument_modules.rigol_dp800 import DP800
 from instrument_modules.rigol_dg4000 import DG4000
 from instrument_modules.Tek_DPO4000 import DPO4000
-from instrument_modules.keithley_2100 import Keithley2100
+#from instrument_modules.keithley_2100 import Keithley2100
+from instrument_modules.keysight_34461a import Keysight34461A
 from report_generator import plot_pdf
 
 SCRIPT_REVISION = 0  # Revision # for report tracking purposes...
@@ -36,7 +37,8 @@ GEN_TEST_VOLTAGE = "20"  # Set function gen voltage, VPP
 PSU_IP_ADDRESS = "10.0.142.1"  # Set PSU IP Address here
 SIG_GEN_IP_ADDRESS = "10.0.142.2"  # Set signal generator IP Address here
 SCOPE_IP_ADDRESS = "10.0.142.3"  # Set oscope IP Address
-DMM_ADDRESS = "USB0::0x05E6::0x2100::8020357::INSTR"
+#DMM_ADDRESS = "USB0::0x05E6::0x2100::8020357::INSTR"
+DMM_ADDRESS = "10.0.143.23"
 
 # *************************************************************************
 
@@ -47,7 +49,8 @@ DMM_ADDRESS = "USB0::0x05E6::0x2100::8020357::INSTR"
 psu = DP800(connection_method="IP", address=PSU_IP_ADDRESS)
 gen = DG4000(connection_method="IP", address=SIG_GEN_IP_ADDRESS)
 scope = DPO4000(connection_method="IP", address=SCOPE_IP_ADDRESS)
-dmm = Keithley2100(connection_method="USB", address=DMM_ADDRESS)
+#dmm = Keithley2100(connection_method="USB", address=DMM_ADDRESS)
+dmm = Keysight34461A(connection_method="IP", address=DMM_ADDRESS)
 # *************************************************************************
 # *************************************************************************
 # ******Initialize Date/Time Names for Test Instance******

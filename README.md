@@ -30,6 +30,36 @@ The testing suite is designed to interface with the following lab equipment:
     * `numpy==2.2.4`
     * *(See `requirements.txt` for the full list of required packages)*
 
+## Repository Structure
+
+The project is organized into modular scripts separating instrument drivers, testing logic, and data reporting:
+
+```text
+ALSu_DCCT_Testing/
+├── main.py                     # Main execution script and orchestrator
+├── plotter_calculator.py       # Waveform unpacking, math (FFT), and matplotlib plotting
+├── report_generator.py         # PDF generation using ReportLab
+├── requirements.txt            # Python package dependencies
+├── .gitignore                  # Git ignore rules
+├── README.md                   # Project documentation
+├── functional_tests/           # Test execution modules
+│   ├── fault_test.py           # FLT12 Fault 1 and 2 test logic
+│   └── current_test.py         # AC current waveform test logic
+├── instrument_modules/         # PyVISA instrument drivers
+│   ├── keithley_2100.py        # Keithley DMM driver
+│   ├── keysight_34461a.py      # Keysight DMM driver
+│   ├── rigol_dg4000.py         # Rigol Signal Gen driver
+│   ├── rigol_dp800.py          # Rigol PSU driver
+│   ├── Tek_DPO4000.py          # Tektronix Oscilloscope driver
+│   └── visa_utils.py           # VISA connection utilities
+└── Test_Data/                  # Dynamically generated root directory for test artifacts
+    └── DCCT_<SN>-<Timestamp>/  # Unique test instance folder
+        ├── DCCT_<SN>_Report.pdf # Final generated report
+        └── raw_data/           # Subdirectory for raw test data
+            ├── *.csv           # Technician info, raw channel data, fault data
+            └── *.png           # Saved waveform plots
+```
+
 ## Installation
 
 1. Clone the repository:

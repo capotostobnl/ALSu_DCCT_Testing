@@ -28,11 +28,11 @@ GEN_TEST_VOLTAGE = "20"  # Set function gen voltage, VPP
 # *************************************************************************
 # ******Set Insturment IP Addresses******
 
-PSU_IP_ADDRESS = "10.0.142.1"  # Set PSU IP Address here
+PSU_IP_ADDRESS = "10.0.143.28"  # Set PSU IP Address here
 SIG_GEN_IP_ADDRESS = "10.0.142.2"  # Set signal generator IP Address here
 SCOPE_IP_ADDRESS = "10.0.142.3"  # Set oscope IP Address
 # DMM_ADDRESS = "USB0::0x05E6::0x2100::8020357::INSTR"
-DMM_ADDRESS = "10.0.143.23"
+DMM_ADDRESS = "10.0.143.26"
 
 # *************************************************************************
 
